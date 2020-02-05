@@ -44,6 +44,8 @@ public class Controller{
         int dag=0;
         int år=0;
         int måned=0;
+        String email = "";
+        String tlfnr = "";
         String navn=txtnavn.getText();
         try{
             alder=Integer.parseInt(txtalder.getText());
@@ -67,7 +69,7 @@ public class Controller{
             lblFeilmelding.setText("Ugyldig måned");
         }
         Dato fødselsdato=new Dato(dag,måned,år);
-        Person enPerson=new Person(navn,alder,fødselsdato);
+        Person enPerson=new Person(navn,alder,fødselsdato,email,tlfnr);
         personregister.leggTil(enPerson);
         registerFelt.setText(personregister.toString());
 
